@@ -12,7 +12,7 @@
 const API_BASE_URL = (() => {
     const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
     if (isLocal) return "http://localhost:5000/api";
-    return "https://YOUR-BACKEND-URL.onrender.com/api"; // <-- PRODUCTION: replace after deploying
+    return "https://universal-telecom.onrender.com/api"; // <-- PRODUCTION: replace after deploying
 })();
 
 // Admin pages (anything under /admin/) and customer-facing pages use
