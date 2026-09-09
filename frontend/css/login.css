@@ -1,0 +1,757 @@
+/* =====================================================
+   TRUECELL ADMIN — LOGIN
+   Reuses the dashboard's design tokens for consistency
+===================================================== */
+
+img{
+    width:60px;
+    height:70px;
+    object-fit:contain;
+    transition:.3s ease;
+    border-radius: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --primary: #7b2ff7;
+    --primary-dark: #7b2ff7;
+
+    --dark: #111318;
+    --dark-2: #1a1d23;
+    --sidebar: #15171c;
+
+    --white: #ffffff;
+    --text: #181b21;
+    --muted: #737985;
+    --border: #e7e9ed;
+    --background: #f5f7fa;
+
+    --success: #18a957;
+    --warning: #e99a00;
+    --danger: #e5484d;
+    --purple: #7950f2;
+
+    --radius: 14px;
+
+    --shadow:
+        0 4px 20px rgba(0, 0, 0, 0.04);
+
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   SCREEN LAYOUT
+===================================================== */
+
+.login-screen {
+
+    display: grid;
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+
+    min-height: 100vh;
+
+}
+
+
+
+/* =====================================================
+   BRAND PANEL (left, dark)
+===================================================== */
+
+.brand-panel {
+
+    position: relative;
+    overflow: hidden;
+
+    background: var(--sidebar);
+    color: var(--white);
+
+    padding: 48px 44px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+
+.brand-panel-glow {
+
+    position: absolute;
+    top: -140px;
+    right: -160px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 138, 42, 0.35) 0%,
+        rgba(255, 138, 42, 0) 70%
+    );
+
+    pointer-events: none;
+
+}
+
+
+.brand-panel-grid {
+
+    position: absolute;
+    inset: 0;
+
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.06) 1px,
+        transparent 1px
+    );
+
+    background-size: 22px 22px;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.15) 60%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.15) 60%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+
+}
+
+
+.brand-mark {
+
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+
+.logo-mark {
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+    font-size: 14px;
+
+    flex-shrink: 0;
+
+}
+
+
+.brand-name {
+
+    font-weight: 700;
+    font-size: 18px;
+
+}
+
+
+.brand-copy {
+
+    position: relative;
+    z-index: 1;
+
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    max-width: 360px;
+
+}
+
+
+.brand-copy h1 {
+
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+}
+
+
+.brand-copy p {
+
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.62);
+
+}
+
+
+.brand-stats {
+
+    position: relative;
+    z-index: 1;
+
+    list-style: none;
+
+    display: flex;
+    gap: 28px;
+
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+.brand-stats li {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+
+.brand-stats strong {
+
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--primary);
+
+}
+
+
+.brand-stats span {
+
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+
+.brand-footer {
+
+    position: relative;
+    z-index: 1;
+
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.4);
+
+}
+
+
+/* =====================================================
+   FORM PANEL (right, light)
+===================================================== */
+
+.form-panel {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px 24px;
+
+}
+
+
+.form-panel-inner {
+
+    width: 100%;
+    max-width: 380px;
+
+}
+
+
+.form-mobile-brand {
+
+    display: none;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 32px;
+
+}
+
+
+.form-heading {
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.form-eyebrow {
+
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary);
+
+}
+
+
+.form-heading h2 {
+
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+
+}
+
+
+.form-heading p {
+
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.form-alert {
+
+    display: none;
+    align-items: flex-start;
+    gap: 10px;
+
+    background: #fdecec;
+    border: 1px solid #f6c6c8;
+    color: var(--danger);
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    font-size: 12.5px;
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-alert.visible {
+    display: flex;
+}
+
+
+.form-alert i {
+    margin-top: 1px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.login-form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+}
+
+
+.field {
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+}
+
+
+.field label {
+
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+
+}
+
+
+.field-label-row {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.forgot-link {
+
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+
+}
+
+
+.forgot-link:hover {
+    color: var(--primary-dark);
+}
+
+
+.field-control {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    height: 46px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 0 14px;
+
+    background: #fafbfc;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+
+}
+
+
+.field-control:focus-within {
+
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 138, 42, 0.14);
+    background: var(--white);
+
+}
+
+
+.field-control i:first-child {
+
+    font-size: 13.5px;
+    color: #9a9ea6;
+    flex-shrink: 0;
+
+}
+
+
+.field-control input {
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 13.5px;
+    color: var(--text);
+    font-family: inherit;
+
+}
+
+
+.field-control input::placeholder {
+    color: #a3a7ae;
+}
+
+
+.toggle-visibility {
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    color: #9a9ea6;
+    font-size: 13.5px;
+
+    padding: 4px;
+    flex-shrink: 0;
+
+}
+
+
+.toggle-visibility:hover {
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   REMEMBER ME
+===================================================== */
+
+.remember-row {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 12.5px;
+    color: var(--muted);
+
+    cursor: pointer;
+    user-select: none;
+
+}
+
+
+.remember-row input {
+
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+
+
+.checkbox-box {
+
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+
+    border: 1px solid #cfd3d9;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+
+}
+
+
+.checkbox-box i {
+
+    font-size: 9px;
+    color: white;
+
+    opacity: 0;
+    transform: scale(0.6);
+
+    transition:
+        opacity 0.12s ease,
+        transform 0.12s ease;
+
+}
+
+
+.remember-row input:checked + .checkbox-box {
+
+    background: var(--primary);
+    border-color: var(--primary);
+
+}
+
+
+.remember-row input:checked + .checkbox-box i {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.remember-row input:focus-visible + .checkbox-box {
+    box-shadow: 0 0 0 3px rgba(255, 138, 42, 0.25);
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.submit-btn {
+
+    height: 46px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    cursor: pointer;
+
+    margin-top: 6px;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+
+}
+
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+.submit-btn:active {
+    transform: scale(0.99);
+}
+
+
+.submit-btn:focus-visible {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 2px;
+}
+
+
+.submit-btn.loading .submit-btn-label::after {
+    content: "Signing in\2026";
+}
+
+
+.submit-btn.loading .submit-btn-label {
+    font-size: 0;
+}
+
+
+.submit-btn.loading .submit-btn-label::after {
+    font-size: 14px;
+}
+
+
+.submit-btn.loading i {
+    display: none;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.form-footer {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    margin-top: 28px;
+
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--muted);
+
+}
+
+
+.form-footer i {
+
+    margin-top: 2px;
+    color: #b7bbc2;
+
+}
+
+
+/* =====================================================
+   FOCUS VISIBILITY (ACCESSIBILITY)
+===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .login-screen {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        display: none;
+    }
+
+    .form-mobile-brand {
+        display: flex;
+    }
+
+    .form-panel {
+        padding: 40px 22px;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        transition: none !important;
+    }
+
+}

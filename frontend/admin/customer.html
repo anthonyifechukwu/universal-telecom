@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UNIVERSAL TELECOM Admin - Customers</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Customers CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     MOBILE HEADER
+========================================= -->
+
+<header class="mobile-header">
+
+    <button
+        class="menu-btn"
+        id="menu-btn"
+        aria-label="Open menu"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <div class="mobile-brand">
+
+        <div class="mobile-logo">
+            <img src="../image/logo.png" alt="Celluar Logo">
+
+        </div>
+
+        <div>
+
+            <strong>UNIVERSAL TELECOM</strong>
+
+            <span>ADMIN PANEL</span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="notification-btn"
+        aria-label="Notifications"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+    </button>
+
+</header>
+
+
+
+<!-- =========================================
+     SIDEBAR OVERLAY
+========================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+></div>
+
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <img src="../image/logo.png" alt="Celluar Logo">
+
+        </div>
+
+        <div>
+
+            <strong>UNIVERSAL TELECOM</strong>
+
+            <span>ADMIN PANEL</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+
+        <a href="universal-telecom-dashboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="products.html">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>Products</span>
+
+        </a>
+
+
+        <a href="add-products.html">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>Add Product</span>
+
+        </a>
+
+
+        <a
+            href="customer.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>Customers</span>
+
+            <span class="notification-count" id="sidebar-customers-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+
+        <a href="admin-chat.html">
+
+            <i class="fa-regular fa-comments"></i>
+
+            <span>Messages</span>
+
+            <span class="notification-count" id="sidebar-messages-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        class="logout-btn"
+        id="logout-btn"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>Logout</span>
+
+    </button>
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <div class="page-header">
+
+
+        <div>
+
+            <div class="breadcrumb">
+
+                <a href="universal-telecom-dashboard.html">
+                    Dashboard
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Customers</span>
+
+            </div>
+
+
+            <h1>Customers</h1>
+
+            <p>
+                Manage customers and communicate with buyers.
+            </p>
+
+        </div>
+
+
+        <div class="customer-stat">
+
+            <span>Total Customers</span>
+
+            <strong id="total-customers">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         CUSTOMER CONTENT
+    ====================================== -->
+
+    <section class="customer-container">
+
+
+        <!-- =================================
+             CUSTOMER LIST
+        ================================== -->
+
+        <div class="customer-list-panel">
+
+
+            <!-- SEARCH -->
+
+            <div class="customer-list-header">
+
+                <div class="list-title">
+
+                    <h2>Customers</h2>
+
+                    <span id="customer-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="customer-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="customer-search"
+                        placeholder="Search customers..."
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FILTER -->
+
+            <div class="customer-filters">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="online"
+                >
+                    Online
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="unread"
+                >
+                    Unread
+                </button>
+
+            </div>
+
+
+
+            <!-- CUSTOMER LIST -->
+
+            <div
+                class="customers"
+                id="customers-list"
+            >
+
+
+                <!--
+                    Customers will be generated
+                    here by JavaScript.
+                -->
+
+
+                <div class="empty-customers">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h3>No customers yet</h3>
+
+                    <p>
+                        Registered customers will
+                        appear here.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+    
+</main>
+
+
+
+<!-- Customers JavaScript -->
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/customer.js"></script>
+
+</body>
+
+</html>
+

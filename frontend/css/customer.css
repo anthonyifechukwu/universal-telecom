@@ -1,0 +1,4165 @@
+/* =========================================
+   TRUECELL ADMIN — CUSTOMERS
+   CSS PART 1/2
+========================================= */
+
+img{
+    width:60px;
+    height:50px;
+    object-fit:contain;
+    transition:.3s ease;
+    border-radius: 100%;
+}
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+
+    --dark: #111827;
+    --dark-2: #1f2937;
+    --dark-3: #263142;
+
+    --orange: #00b4ff;
+    --orange-dark: #7b2ff7;
+
+    --blue: #0ea5e9;
+    --green: #22c55e;
+    --red: #ef4444;
+    --purple: #7c3aed;
+
+    --bg: #f5f7fb;
+    --white: #ffffff;
+
+    --text: #172033;
+    --muted: #6b7280;
+
+    --border: #e5e7eb;
+
+    --radius: 14px;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   MOBILE HEADER
+========================================= */
+
+.mobile-header {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--dark);
+
+    color: white;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        5px
+        10px
+        30px;
+
+}
+
+
+.logo-icon {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--purple)
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+.logo strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 17px;
+
+    line-height: 1.2;
+
+}
+
+
+.logo span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.sidebar nav a {
+
+    position: relative;
+
+    min-height: 45px;
+
+    padding:
+        11px
+        13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 10px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+
+}
+
+
+.sidebar nav a i {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+}
+
+
+.sidebar nav a:hover {
+
+    background:
+        rgba(255,255,255,.07);
+
+    color: white;
+
+}
+
+
+.sidebar nav a.active {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,138,42,.18),
+            rgba(124,58,237,.12)
+        );
+
+    color: white;
+
+}
+
+
+.sidebar nav a.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+
+    width: 3px;
+
+    border-radius:
+        0 4px 4px 0;
+
+    background: var(--orange);
+
+}
+
+
+.notification-count {
+
+    min-width: 20px;
+    height: 20px;
+
+    margin-left: auto;
+
+    padding:
+        0 5px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--orange);
+
+    color: white;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-btn {
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.logout-btn:hover {
+
+    background:
+        rgba(239,68,68,.12);
+
+    color: #fca5a5;
+
+}
+
+
+/* =========================================
+   SIDEBAR OVERLAY
+========================================= */
+
+.sidebar-overlay {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main {
+
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding:
+        35px
+        40px
+        50px;
+
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.breadcrumb {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+.breadcrumb a {
+
+    color: var(--blue);
+
+}
+
+
+.breadcrumb i {
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+}
+
+
+.page-header h1 {
+
+    font-size: 30px;
+
+    font-weight: 750;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.page-header p {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   CUSTOMER STAT
+========================================= */
+
+.customer-stat {
+
+    min-width: 150px;
+
+    padding:
+        13px
+        17px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 11px;
+
+    background: white;
+
+}
+
+
+.customer-stat span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.customer-stat strong {
+
+    color: var(--text);
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================
+   CUSTOMER CONTAINER
+========================================= */
+
+.customer-container {
+
+    width: 100%;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        360px
+        minmax(0, 1fr);
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: var(--radius);
+
+    background: white;
+
+    box-shadow:
+        0 3px 15px
+        rgba(15,23,42,.035);
+
+}
+
+
+/* =========================================
+   CUSTOMER LIST PANEL
+========================================= */
+
+.customer-list-panel {
+
+    min-width: 0;
+
+    border-right:
+        1px solid
+        var(--border);
+
+    background: white;
+
+}
+
+
+/* =========================================
+   LIST HEADER
+========================================= */
+
+.customer-list-header {
+
+    padding: 20px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.list-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.list-title h2 {
+
+    font-size: 17px;
+
+}
+
+
+.list-title > span {
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 0 6px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(14,165,233,.1);
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.customer-search {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+.customer-search i {
+
+    position: absolute;
+
+    top: 50%;
+    left: 13px;
+
+    transform:
+        translateY(-50%);
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    pointer-events: none;
+
+}
+
+
+.customer-search input {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding:
+        0
+        12px
+        0
+        37px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #f8fafc;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    transition: .2s ease;
+
+}
+
+
+.customer-search input::placeholder {
+
+    color: #9ca3af;
+
+}
+
+
+.customer-search input:focus {
+
+    border-color: var(--blue);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.08);
+
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.customer-filters {
+
+    padding:
+        12px
+        20px;
+
+    display: flex;
+
+    gap: 7px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.filter-btn {
+
+    min-height: 32px;
+
+    padding:
+        0
+        12px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.filter-btn:hover {
+
+    border-color: var(--blue);
+
+    color: var(--blue);
+
+}
+
+
+.filter-btn.active {
+
+    border-color: var(--blue);
+
+    background:
+        rgba(14,165,233,.1);
+
+    color: var(--blue);
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   CUSTOMERS LIST
+========================================= */
+
+.customers {
+
+    height: 500px;
+
+    overflow-y: auto;
+
+}
+
+
+.customers::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+.customers::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background: #d1d5db;
+
+}
+
+
+/* =========================================
+   EMPTY CUSTOMER STATE
+========================================= */
+
+.empty-customers {
+
+    min-height: 380px;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--muted);
+
+}
+
+
+.empty-customers > i {
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 14px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(14,165,233,.08);
+
+    color: var(--blue);
+
+    font-size: 20px;
+
+}
+
+
+.empty-customers h3 {
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+}
+
+
+.empty-customers p {
+
+    max-width: 230px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   CUSTOMER DETAILS
+========================================= */
+
+.customer-details {
+
+    min-width: 0;
+
+    min-height: 650px;
+
+    background: #f8fafc;
+
+}
+
+
+/* =========================================
+   NO CUSTOMER SELECTED
+========================================= */
+
+.no-customer-selected {
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 650px;
+
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.empty-chat-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(124,58,237,.09);
+
+    color: var(--purple);
+
+    font-size: 25px;
+
+}
+
+
+.no-customer-selected h2 {
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 18px;
+
+}
+
+
+.no-customer-selected p {
+
+    max-width: 360px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+
+        width: 220px;
+
+    }
+
+
+    .main {
+
+        margin-left: 220px;
+
+        padding:
+            30px
+            25px
+            45px;
+
+    }
+
+
+    .customer-container {
+
+        grid-template-columns:
+            320px
+            minmax(0, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* MOBILE HEADER */
+
+    .mobile-header {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 68px;
+
+        padding:
+            0
+            15px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        background: var(--dark);
+
+        color: white;
+
+        box-shadow:
+            0 3px 15px
+            rgba(0,0,0,.15);
+
+        z-index: 1100;
+
+    }
+
+
+    .menu-btn,
+    .notification-btn {
+
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+
+        border: none;
+
+        border-radius: 10px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: var(--dark-3);
+
+        color: white;
+
+        cursor: pointer;
+
+    }
+
+
+    .mobile-brand {
+
+        margin-right: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+    }
+
+
+    .mobile-logo {
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--orange),
+                var(--purple)
+            );
+
+    }
+
+
+    .mobile-brand strong {
+
+        display: block;
+
+        font-size: 15px;
+
+    }
+
+
+    .mobile-brand span {
+
+        display: block;
+
+        margin-top: 2px;
+
+        color: #9ca3af;
+
+        font-size: 9px;
+
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+
+        width: 280px;
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform .3s ease;
+
+        z-index: 1200;
+
+    }
+
+
+    .sidebar.open {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .sidebar-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        display: block;
+
+        background:
+            rgba(0,0,0,.5);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity .3s ease,
+            visibility .3s ease;
+
+        z-index: 1150;
+
+    }
+
+
+    .sidebar-overlay.show {
+
+        opacity: 1;
+
+        visibility: visible;
+
+    }
+
+
+    /* MAIN */
+
+    .main {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            90px
+            15px
+            40px;
+
+    }
+
+
+    /* PAGE HEADER */
+
+    .page-header {
+
+        align-items: flex-start;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .page-header p {
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .customer-stat {
+
+        min-width: 95px;
+
+        padding:
+            10px
+            12px;
+
+    }
+
+
+    .customer-stat strong {
+
+        font-size: 19px;
+
+    }
+
+
+    /* CUSTOMER CONTAINER */
+
+    .customer-container {
+
+        min-height: auto;
+
+        display: block;
+
+        overflow: visible;
+
+    }
+
+
+    .customer-list-panel {
+
+        width: 100%;
+
+        border-right: none;
+
+    }
+
+
+    .customer-details {
+
+        width: 100%;
+
+        min-height: 500px;
+
+        margin-top: 15px;
+
+        border:
+            1px solid
+            var(--border);
+
+        border-radius: 12px;
+
+        overflow: hidden;
+
+    }
+
+
+    .no-customer-selected {
+
+        min-height: 450px;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .customers {
+
+        height: 400px;
+
+    }
+
+}
+
+/* =========================================
+   TRUECELL ADMIN — CUSTOMERS
+   CSS PART 2/2
+========================================= */
+
+
+/* =========================================
+   CUSTOMER CARD
+========================================= */
+
+.customer-card {
+
+    position: relative;
+
+    min-height: 82px;
+
+    padding: 13px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    background: white;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease;
+
+}
+
+
+.customer-card:hover {
+
+    background: #f8fafc;
+
+}
+
+
+.customer-card.active {
+
+    background:
+        rgba(14,165,233,.07);
+
+}
+
+
+.customer-card.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: var(--blue);
+
+}
+
+
+/* =========================================
+   CUSTOMER AVATAR
+========================================= */
+
+.customer-avatar {
+
+    position: relative;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #e0e7ff
+        );
+
+    color: #3730a3;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    overflow: visible;
+
+}
+
+
+.customer-avatar img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================
+   ONLINE INDICATOR
+========================================= */
+
+.online-dot {
+
+    position: absolute;
+
+    right: -1px;
+    bottom: 1px;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    background: #9ca3af;
+
+}
+
+
+.online-dot.online {
+
+    background: var(--green);
+
+}
+
+
+/* =========================================
+   CUSTOMER CARD INFO
+========================================= */
+
+.customer-card-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.customer-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+}
+
+
+.customer-name {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.customer-time {
+
+    flex-shrink: 0;
+
+    color: #9ca3af;
+
+    font-size: 9px;
+
+}
+
+
+.customer-preview {
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.customer-card-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 6px;
+
+}
+
+
+.order-count {
+
+    color: #64748b;
+
+    font-size: 9px;
+
+}
+
+
+.unread-count {
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--orange);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   CUSTOMER DETAILS HEADER
+========================================= */
+
+.customer-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+}
+
+
+.customer-profile-header {
+
+    min-height: 82px;
+
+    padding:
+        15px
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    background: white;
+
+}
+
+
+.profile-main {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+}
+
+
+.profile-avatar {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #ede9fe
+        );
+
+    color: #4338ca;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.profile-name {
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.profile-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+.profile-status i {
+
+    color: var(--green);
+
+    font-size: 7px;
+
+}
+
+
+/* =========================================
+   PROFILE ACTIONS
+========================================= */
+
+.profile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.profile-action-btn {
+
+    width: 36px;
+    height: 36px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.profile-action-btn:hover {
+
+    border-color: var(--blue);
+
+    color: var(--blue);
+
+    background:
+        rgba(14,165,233,.05);
+
+}
+
+
+/* =========================================
+   CUSTOMER INFORMATION
+========================================= */
+
+.customer-info-bar {
+
+    padding:
+        13px
+        20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    background: white;
+
+}
+
+
+.info-item {
+
+    min-width: 0;
+
+}
+
+
+.info-item span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .3px;
+
+}
+
+
+.info-item strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   ORDER SUMMARY
+========================================= */
+
+.order-summary {
+
+    margin:
+        12px
+        20px
+        0;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+
+.order-summary-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+}
+
+
+.order-summary-header strong {
+
+    font-size: 12px;
+
+}
+
+
+.view-orders {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.order-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.order-stat {
+
+    padding: 9px;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+}
+
+
+.order-stat strong {
+
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+}
+
+
+.order-stat span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================
+   CHAT AREA
+========================================= */
+
+.chat-area {
+
+    flex: 1;
+
+    min-height: 280px;
+
+    padding:
+        20px;
+
+    overflow-y: auto;
+
+    background:
+        #f8fafc;
+
+}
+
+
+.chat-area::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+.chat-area::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background: #d1d5db;
+
+}
+
+
+/* =========================================
+   DATE DIVIDER
+========================================= */
+
+.chat-date {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        5px
+        0
+        18px;
+
+    color: #9ca3af;
+
+    font-size: 9px;
+
+}
+
+
+.chat-date::before,
+.chat-date::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e5e7eb;
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+
+    display: flex;
+
+    margin-bottom: 13px;
+
+}
+
+
+.message.customer {
+
+    justify-content: flex-start;
+
+}
+
+
+.message.admin {
+
+    justify-content: flex-end;
+
+}
+
+
+.message-content {
+
+    max-width: min(70%, 450px);
+
+}
+
+
+.message-bubble {
+
+    padding:
+        10px
+        12px;
+
+    border-radius: 12px;
+
+    color: #374151;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+.message.customer
+.message-bubble {
+
+    border:
+        1px solid
+        var(--border);
+
+    border-top-left-radius: 4px;
+
+    background: white;
+
+}
+
+
+.message.admin
+.message-bubble {
+
+    border-top-right-radius: 4px;
+
+    background:
+        var(--blue);
+
+    color: white;
+
+}
+
+
+.message-time {
+
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+}
+
+
+.message.admin .message-time {
+
+    text-align: right;
+
+}
+
+
+/* =========================================
+   CART IN CHAT
+========================================= */
+
+.cart-message {
+
+    max-width: 380px;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+
+.cart-message-header {
+
+    padding:
+        10px
+        12px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.cart-message-header i {
+
+    color: var(--orange);
+
+}
+
+
+.cart-message-header strong {
+
+    font-size: 11px;
+
+}
+
+
+.cart-product {
+
+    padding:
+        9px
+        12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-bottom:
+        1px solid
+        #f1f5f9;
+
+}
+
+
+.cart-product img {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 7px;
+
+    object-fit: cover;
+
+}
+
+
+.cart-product-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.cart-product-info strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.cart-product-info span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+}
+
+
+.cart-total {
+
+    padding:
+        10px
+        12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.cart-total span {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+.cart-total strong {
+
+    color: var(--text);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   CHAT INPUT
+========================================= */
+
+.chat-input-area {
+
+    padding:
+        12px
+        15px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    background: white;
+
+}
+
+
+.chat-input {
+
+    min-height: 44px;
+
+    padding:
+        6px
+        7px
+        6px
+        13px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 7px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 11px;
+
+    background: #f8fafc;
+
+}
+
+
+.chat-input textarea {
+
+    width: 100%;
+
+    min-height: 30px;
+    max-height: 100px;
+
+    padding:
+        7px
+        0;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+
+.chat-input textarea::placeholder {
+
+    color: #9ca3af;
+
+}
+
+
+.attach-btn,
+.send-btn {
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+
+.attach-btn {
+
+    background: transparent;
+
+    color: #64748b;
+
+}
+
+
+.attach-btn:hover {
+
+    background: #e5e7eb;
+
+}
+
+
+.send-btn {
+
+    background: var(--blue);
+
+    color: white;
+
+}
+
+
+.send-btn:hover {
+
+    background: #0284c7;
+
+}
+
+
+/* =========================================
+   TYPING INDICATOR
+========================================= */
+
+.typing-indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    margin:
+        0
+        0
+        10px
+        5px;
+
+}
+
+
+.typing-indicator span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #9ca3af;
+
+    animation:
+        typing 1.2s infinite ease-in-out;
+
+}
+
+
+.typing-indicator span:nth-child(2) {
+
+    animation-delay: .15s;
+
+}
+
+
+.typing-indicator span:nth-child(3) {
+
+    animation-delay: .3s;
+
+}
+
+
+@keyframes typing {
+
+    0%,
+    60%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    30% {
+
+        transform: translateY(-4px);
+
+    }
+
+}
+
+
+/* =========================================
+   EMPTY CHAT
+========================================= */
+
+.chat-empty {
+
+    height: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--muted);
+
+}
+
+
+.chat-empty i {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 28px;
+
+    color: #cbd5e1;
+
+}
+
+
+.chat-empty p {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .customer-profile-header {
+
+        padding:
+            13px
+            15px;
+
+    }
+
+
+    .customer-info-bar {
+
+        padding:
+            11px
+            15px;
+
+    }
+
+
+    .order-summary {
+
+        margin-left: 15px;
+
+        margin-right: 15px;
+
+    }
+
+
+    .chat-area {
+
+        padding:
+            15px;
+
+    }
+
+
+    .chat-input-area {
+
+        padding:
+            10px;
+
+    }
+
+
+    .message-content {
+
+        max-width: 78%;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .customer-profile-header {
+
+        min-height: 70px;
+
+        padding:
+            12px
+            14px;
+
+    }
+
+
+    .profile-avatar {
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 13px;
+
+    }
+
+
+    .profile-name {
+
+        font-size: 13px;
+
+    }
+
+
+    .profile-status {
+
+        font-size: 9px;
+
+    }
+
+
+    .profile-actions {
+
+        gap: 4px;
+
+    }
+
+
+    .profile-action-btn {
+
+        width: 33px;
+        height: 33px;
+
+        font-size: 11px;
+
+    }
+
+
+    .customer-info-bar {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+
+        padding:
+            12px
+            14px;
+
+    }
+
+
+    .order-summary {
+
+        margin:
+            10px
+            14px
+            0;
+
+    }
+
+
+    .chat-area {
+
+        min-height: 350px;
+
+        max-height: 450px;
+
+        padding:
+            15px
+            12px;
+
+    }
+
+
+    .message-content {
+
+        max-width: 85%;
+
+    }
+
+
+    .message-bubble {
+
+        font-size: 10px;
+
+        padding:
+            9px
+            11px;
+
+    }
+
+
+    .cart-message {
+
+        max-width: 100%;
+
+    }
+
+
+    .chat-input-area {
+
+        padding:
+            9px
+            10px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+    .customer-profile-header {
+
+        gap: 8px;
+
+    }
+
+
+    .profile-main {
+
+        gap: 8px;
+
+    }
+
+
+    .profile-avatar {
+
+        width: 38px;
+        height: 38px;
+
+    }
+
+
+    .profile-actions .profile-action-btn:nth-child(
+        2
+    ) {
+
+        display: none;
+
+    }
+
+
+    .customer-info-bar {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .order-stats {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .order-stat {
+
+        padding: 7px 4px;
+
+    }
+
+
+    .order-stat strong {
+
+        font-size: 12px;
+
+    }
+
+
+    .order-stat span {
+
+        font-size: 7px;
+
+    }
+
+
+    .chat-area {
+
+        min-height: 330px;
+
+    }
+
+
+    .message-content {
+
+        max-width: 90%;
+
+    }
+
+
+    .attach-btn {
+
+        display: none;
+
+    }
+
+}
+
+
+/* =========================================
+   UTILITY
+========================================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+.no-scroll {
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   TRUECELL FULL-SCREEN CHAT
+   WHATSAPP-STYLE
+   CSS PART 2
+========================================= */
+
+
+/* =========================================
+   CHAT SCREEN
+========================================= */
+
+.chat-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #f0f2f5;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateX(100%);
+
+    transition:
+        transform .3s ease,
+        opacity .25s ease,
+        visibility .3s ease;
+
+}
+
+
+/* OPEN CHAT */
+
+.chat-screen.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================
+   CHAT HEADER
+========================================= */
+
+.chat-screen-header {
+
+    height: 70px;
+
+    flex-shrink: 0;
+
+    padding:
+        0
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid
+        #e5e7eb;
+
+    box-shadow:
+        0 1px 5px
+        rgba(0,0,0,.05);
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.chat-back-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.chat-back-btn:hover {
+
+    background: #f1f5f9;
+
+}
+
+
+/* =========================================
+   CUSTOMER PROFILE
+========================================= */
+
+.chat-customer-profile {
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+/* =========================================
+   CHAT AVATAR
+========================================= */
+
+.chat-avatar {
+
+    position: relative;
+
+    width: 46px;
+
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #ede9fe
+        );
+
+    color: #4338ca;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   ONLINE DOT
+========================================= */
+
+.chat-online-dot {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 1px;
+
+    width: 12px;
+
+    height: 12px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    background: #9ca3af;
+
+}
+
+
+.chat-online-dot.online {
+
+    background: #22c55e;
+
+}
+
+
+/* =========================================
+   CUSTOMER NAME + STATUS
+========================================= */
+
+.chat-customer-info {
+
+    min-width: 0;
+
+}
+
+
+.chat-customer-info h2 {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.chat-customer-info span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    overflow: hidden;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.chat-customer-info span.online {
+
+    color: #22c55e;
+
+}
+
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.chat-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.chat-header-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.chat-header-btn:hover {
+
+    background: #f1f5f9;
+
+    color: #0ea5e9;
+
+}
+
+
+/* =========================================
+   CHAT BODY
+========================================= */
+
+.chat-screen-body {
+
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        25px
+        8%;
+
+    overflow-y: auto;
+
+    background:
+        #f0f2f5;
+
+}
+
+
+/*
+   Subtle chat background pattern.
+*/
+
+.chat-screen-body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 70px 0 75px;
+
+    z-index: -1;
+
+    opacity: .25;
+
+    background-image:
+        radial-gradient(
+            #cbd5e1 1px,
+            transparent 1px
+        );
+
+    background-size: 22px 22px;
+
+    pointer-events: none;
+
+}
+
+
+/* SCROLLBAR */
+
+.chat-screen-body::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.chat-screen-body::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background: #cbd5e1;
+
+}
+
+
+.chat-screen-body::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+/* =========================================
+   DATE DIVIDER
+========================================= */
+
+.full-chat-date {
+
+    width: fit-content;
+
+    margin:
+        0
+        auto
+        20px;
+
+    padding:
+        6px
+        12px;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    box-shadow:
+        0 1px 2px
+        rgba(0,0,0,.05);
+
+}
+
+
+/* =========================================
+   FULL CHAT MESSAGE
+========================================= */
+
+.full-message {
+
+    display: flex;
+
+    margin-bottom: 8px;
+
+}
+
+
+.full-message.customer {
+
+    justify-content: flex-start;
+
+}
+
+
+.full-message.admin {
+
+    justify-content: flex-end;
+
+}
+
+
+.full-message-content {
+
+    max-width: min(
+        65%,
+        650px
+    );
+
+}
+
+
+/* =========================================
+   MESSAGE BUBBLE
+========================================= */
+
+.full-message-bubble {
+
+    padding:
+        9px
+        12px;
+
+    border-radius: 9px;
+
+    color: #172033;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    word-break: break-word;
+
+    box-shadow:
+        0 1px 1px
+        rgba(0,0,0,.05);
+
+}
+
+
+.full-message.customer
+.full-message-bubble {
+
+    border-top-left-radius: 3px;
+
+    background: #ffffff;
+
+}
+
+
+.full-message.admin
+.full-message-bubble {
+
+    border-top-right-radius: 3px;
+
+    background: #d9fdd3;
+
+}
+
+
+/* =========================================
+   MESSAGE META
+========================================= */
+
+.full-message-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 4px;
+
+    margin-top: 4px;
+
+    color: #8696a0;
+
+    font-size: 8px;
+
+}
+
+
+.full-message-meta .read {
+
+    color: #0ea5e9;
+
+}
+
+
+.full-message-meta i {
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================
+   CART MESSAGE
+========================================= */
+
+.full-cart-message {
+
+    width: min(
+        500px,
+        100%
+    );
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 2px
+        rgba(0,0,0,.08);
+
+}
+
+
+.full-cart-header {
+
+    padding:
+        13px
+        15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-bottom:
+        1px solid
+        #edf0f2;
+
+}
+
+
+.full-cart-header i {
+
+    color: #ff8a2a;
+
+    font-size: 14px;
+
+}
+
+
+.full-cart-header strong {
+
+    color: #172033;
+
+    font-size: 12px;
+
+}
+
+
+.full-cart-item {
+
+    padding:
+        10px
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-bottom:
+        1px solid
+        #f1f5f9;
+
+}
+
+
+.full-cart-item img {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+
+}
+
+
+.full-cart-item-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.full-cart-item-info strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color: #172033;
+
+    font-size: 11px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.full-cart-item-info span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+}
+
+
+.full-cart-total {
+
+    padding:
+        12px
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.full-cart-total span {
+
+    color: #64748b;
+
+    font-size: 10px;
+
+}
+
+
+.full-cart-total strong {
+
+    color: #172033;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   CHAT FOOTER
+========================================= */
+
+.chat-screen-footer {
+
+    min-height: 72px;
+
+    flex-shrink: 0;
+
+    padding:
+        10px
+        8%;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #f0f2f5;
+
+    border-top:
+        1px solid
+        #dfe3e6;
+
+}
+
+
+/* =========================================
+   MESSAGE FORM
+========================================= */
+
+.full-chat-form {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding:
+        5px
+        6px
+        5px
+        12px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 1px 3px
+        rgba(0,0,0,.08);
+
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.full-chat-form textarea {
+
+    min-width: 0;
+
+    flex: 1;
+
+    min-height: 36px;
+
+    max-height: 120px;
+
+    padding:
+        9px
+        2px;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #172033;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+.full-chat-form textarea::placeholder {
+
+    color: #9ca3af;
+
+}
+
+
+/* =========================================
+   ATTACH BUTTON
+========================================= */
+
+.chat-attach-btn {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+.chat-attach-btn:hover {
+
+    background: #f1f5f9;
+
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.chat-send-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #0ea5e9;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .2s ease;
+
+}
+
+
+.chat-send-btn:hover {
+
+    background: #0284c7;
+
+    transform: scale(1.04);
+
+}
+
+
+.chat-send-btn:active {
+
+    transform: scale(.94);
+
+}
+
+
+/* =========================================
+   CHAT EMPTY STATE
+========================================= */
+
+.full-chat-empty {
+
+    height: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.full-chat-empty-box {
+
+    padding: 25px;
+
+    color: #64748b;
+
+}
+
+
+.full-chat-empty-box i {
+
+    margin-bottom: 12px;
+
+    color: #94a3b8;
+
+    font-size: 35px;
+
+}
+
+
+.full-chat-empty-box p {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   CUSTOMER INFO PANEL
+========================================= */
+
+.customer-info-panel {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 360px;
+
+    z-index: 20;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-left:
+        1px solid
+        #e5e7eb;
+
+    box-shadow:
+        -5px 0 20px
+        rgba(0,0,0,.08);
+
+    transform:
+        translateX(100%);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.customer-info-panel.open {
+
+    transform:
+        translateX(0);
+
+}
+
+
+.customer-info-close {
+
+    width: 36px;
+
+    height: 36px;
+
+    margin-bottom: 20px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    cursor: pointer;
+
+}
+
+
+.customer-info-panel h3 {
+
+    margin-bottom: 20px;
+
+    color: #172033;
+
+    font-size: 18px;
+
+}
+
+
+.customer-info-row {
+
+    padding:
+        13px
+        0;
+
+    border-bottom:
+        1px solid
+        #edf0f2;
+
+}
+
+
+.customer-info-row span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+}
+
+
+.customer-info-row strong {
+
+    color: #172033;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .chat-screen {
+
+        transform:
+            translateX(100%);
+
+    }
+
+
+    .chat-screen-header {
+
+        height: 64px;
+
+        padding:
+            0
+            8px;
+
+        gap: 5px;
+
+    }
+
+
+    .chat-back-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .chat-avatar {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 12px;
+
+    }
+
+
+    .chat-customer-info h2 {
+
+        font-size: 13px;
+
+    }
+
+
+    .chat-customer-info span {
+
+        font-size: 9px;
+
+    }
+
+
+    .chat-header-actions {
+
+        gap: 0;
+
+    }
+
+
+    .chat-header-btn {
+
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 12px;
+
+    }
+
+
+    /* Hide call on small screens */
+
+    .chat-header-btn:first-child {
+
+        display: none;
+
+    }
+
+
+    .chat-screen-body {
+
+        padding:
+            15px
+            10px;
+
+    }
+
+
+    .chat-screen-body::before {
+
+        inset:
+            64px
+            0
+            70px;
+
+    }
+
+
+    .full-message-content {
+
+        max-width: 85%;
+
+    }
+
+
+    .full-message-bubble {
+
+        padding:
+            8px
+            10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .full-cart-message {
+
+        width: 100%;
+
+    }
+
+
+    .chat-screen-footer {
+
+        min-height: 65px;
+
+        padding:
+            8px
+            7px;
+
+    }
+
+
+    .full-chat-form {
+
+        min-height: 46px;
+
+        border-radius: 23px;
+
+        padding-left: 8px;
+
+    }
+
+
+    .full-chat-form textarea {
+
+        font-size: 11px;
+
+    }
+
+
+    .chat-attach-btn {
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 14px;
+
+    }
+
+
+    .chat-send-btn {
+
+        width: 36px;
+
+        height: 36px;
+
+    }
+
+
+    .customer-info-panel {
+
+        width: 100%;
+
+        padding: 20px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .chat-header-btn:last-child {
+
+        display: none;
+
+    }
+
+
+    .chat-customer-profile {
+
+        gap: 7px;
+
+    }
+
+
+    .chat-screen-body {
+
+        padding:
+            12px
+            7px;
+
+    }
+
+
+    .full-message-content {
+
+        max-width: 90%;
+
+    }
+
+}
+
+
+/* =========================================
+   PREVENT BACKGROUND SCROLL
+========================================= */
+
+body.chat-open {
+
+    overflow: hidden;
+
+}
+
+
+/* Added: delete-customer button on each customer card */
+.customer-delete-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+    flex-shrink: 0;
+}
+
+.customer-delete-btn:hover {
+    background: rgba(220, 38, 38, .1);
+    color: #dc2626;
+}

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Universal Telecom Admin - Customer Messages"
+    >
+
+    <title>Messages | Universal Telecom Admin</title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Inquiries CSS (shared admin shell styling) -->
+
+    <link
+        rel="stylesheet"
+        href="../css/inquiries.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin-chat.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MOBILE HEADER
+====================================================== -->
+
+<header class="mobile-header" id="mobile-header">
+
+    <button
+        type="button"
+        class="menu-btn"
+        id="menu-btn"
+        aria-label="Open navigation"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <div class="mobile-brand">
+
+        <div class="mobile-logo">
+
+            <img
+                src="../image/logo.png"
+                alt="Universal Telecom Logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                UNIVERSAL TELECOM
+            </strong>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="notification-btn"
+        aria-label="Notifications"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+></div>
+
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <img
+                src="../image/logo.png"
+                alt="Universal Telecom Logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                UNIVERSAL TELECOM
+            </strong>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+
+        <!-- Dashboard -->
+
+        <a href="universal-telecom-dashboard.html">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <!-- Products -->
+
+        <a href="products.html">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Products
+            </span>
+
+        </a>
+
+
+
+        <!-- Add Product -->
+
+        <a href="add-products.html">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>
+                Add Product
+            </span>
+
+        </a>
+
+
+
+        <!-- Customers -->
+
+        <a href="customer.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+
+        <!-- Inquiries -->
+
+        <a href="inquiries.html">
+
+            <i class="fa-solid fa-file-circle-question"></i>
+
+            <span>
+                Inquiries
+            </span>
+
+        </a>
+
+
+
+        <!-- Messages -->
+
+        <a
+            href="admin-chat.html"
+            class="active"
+        >
+
+            <i class="fa-regular fa-comments"></i>
+
+            <span>
+                Messages
+            </span>
+
+            <span class="notification-count" id="sidebar-unread-count" hidden>
+                0
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        type="button"
+        class="logout-btn"
+        id="logout-btn"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>
+            Logout
+        </span>
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="main">
+
+
+    <div class="chat-admin-container" id="chat-admin-container">
+
+
+        <!-- =================================================
+             CONVERSATION LIST (left / mobile default view)
+        ================================================== -->
+
+        <section class="conversation-list" id="conversation-list">
+
+            <header class="page-header">
+
+                <div>
+
+                    <div class="breadcrumb">
+
+                        <a href="universal-telecom-dashboard.html">
+                            Dashboard
+                        </a>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                        <span>
+                            Messages
+                        </span>
+
+                    </div>
+
+                    <h1>
+                        Customer Messages
+                    </h1>
+
+                    <p>
+                        Conversations customers have started from the site.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <div class="conversation-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="conversation-search-input"
+                    placeholder="Search by name or business..."
+                >
+
+            </div>
+
+
+            <div id="conversations-loading" class="chat-state">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                <p>Loading conversations...</p>
+            </div>
+
+            <div id="conversations-empty" class="chat-state" hidden>
+                <i class="fa-regular fa-comment-dots"></i>
+                <p>No customer messages yet.</p>
+                <span>New messages will appear here as soon as a customer writes in.</span>
+            </div>
+
+            <div id="conversations-error" class="chat-state" hidden>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="conversations-error-message">Could not load conversations.</p>
+                <button type="button" id="conversations-retry-btn">Retry</button>
+            </div>
+
+            <ul id="conversation-items"></ul>
+
+        </section>
+
+
+        <!-- =================================================
+             THREAD VIEW (right / mobile full-screen on open)
+        ================================================== -->
+
+        <section class="thread-view" id="thread-view">
+
+            <div class="thread-empty-state" id="thread-empty-state">
+
+                <i class="fa-regular fa-comments"></i>
+                <p>Select a conversation to view messages.</p>
+
+            </div>
+
+            <div class="thread-active" id="thread-active" hidden>
+
+                <header class="thread-header">
+
+                    <button type="button" class="back-to-list-btn" id="back-to-list-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <div class="thread-customer-info">
+                        <strong id="thread-customer-name">—</strong>
+                        <span id="thread-customer-business">—</span>
+                    </div>
+
+                    <a href="#" id="thread-view-inquiries-link" class="thread-view-inquiries-btn" title="View this customer's quote requests">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </a>
+
+                    <button type="button" id="thread-delete-customer-btn" class="thread-view-inquiries-btn" title="Delete this customer" style="color:#dc2626;">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                </header>
+
+                <div class="thread-messages" id="thread-messages"></div>
+
+                <form class="thread-reply-form" id="thread-reply-form">
+
+                    <input
+                        type="text"
+                        id="thread-reply-input"
+                        placeholder="Type a reply..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" id="thread-reply-send">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/admin-chat.js"></script>
+
+</body>
+
+</html>

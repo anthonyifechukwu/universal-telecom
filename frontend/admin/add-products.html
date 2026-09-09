@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UNIVERSAL TELECOM Admin - Add Product</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Add Product CSS -->
+    <link rel="stylesheet" href="../css/add-products.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     MOBILE HEADER
+========================================= -->
+
+<header class="mobile-header">
+
+    <button
+        class="menu-btn"
+        id="menu-btn"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <div class="mobile-brand">
+
+        <div class="mobile-logo">
+            <img src="../image/logo.png" alt="Celluar Logo">
+        </div>
+
+        <div>
+
+            <strong>UNIVERSAL TELECOM</strong>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+    </div>
+
+
+    <button class="notification-btn">
+
+        <i class="fa-regular fa-bell"></i>
+
+    </button>
+
+</header>
+
+
+
+<!-- =========================================
+     SIDEBAR OVERLAY
+========================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+></div>
+
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            <img src="../image/logo.png" alt="Celluar Logo">
+        </div>
+
+
+        <div>
+
+            <strong>UNIVERSAL TELECOM</strong>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+
+        <a href="universal-telecom-dashboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="products.html">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>Products</span>
+
+        </a>
+
+
+        <a
+            href="add-products.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>Add Product</span>
+
+        </a>
+
+
+        <a href="customer.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>Customers</span>
+
+        </a>
+
+
+        <a href="admin-chat.html">
+
+            <i class="fa-solid fa-comments"></i>
+
+            <span>Messages</span>
+
+            <small class="notification-count" id="sidebar-messages-badge" hidden>
+                0
+            </small>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        class="logout-btn"
+        id="logout-btn"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>Logout</span>
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <div class="page-header">
+
+
+        <div>
+
+            <div class="breadcrumb">
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Add Product</span>
+
+            </div>
+
+
+            <h1>
+                Add New Product
+            </h1>
+
+
+            <p>
+                Add a new product to your Universal Telecom inventory.
+            </p>
+
+        </div>
+
+
+        <a
+            href="products.html"
+            class="back-btn"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span>Back to Products</span>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PRODUCT FORM
+    ====================================== -->
+
+    <form
+        id="product-form"
+        class="product-form"
+    >
+
+
+
+        <!-- =================================
+             PRODUCT INFORMATION
+        ================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-icon">
+
+                    <i class="fa-solid fa-box"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Product Information
+                    </h2>
+
+                    <p>
+                        Basic information about the phone.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="form-group full">
+
+                    <label for="product-name">
+
+                        Product Name
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="product-name"
+                        name="name"
+                        placeholder="e.g. Samsung Galaxy S25 Ultra"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- BRAND -->
+
+                <div class="form-group">
+
+                    <label for="brand">
+
+                        Brand
+                        <span>*</span>
+
+                    </label>
+
+                    <select
+                        id="brand"
+                        name="brand"
+                        required
+                    >
+
+                        <option value="">
+                            Select Brand
+                        </option>
+
+                        <option value="Samsung">
+                            Samsung
+                        </option>
+
+                        <option value="Xiaomi">
+                            Xiaomi
+                        </option>
+
+                        <option value="Google">
+                            Google Pixel
+                        </option>
+
+                        <option value="OnePlus">
+                            OnePlus
+                        </option>
+
+                        <option value="Tecno">
+                            Tecno
+                        </option>
+
+                        <option value="Infinix">
+                            Infinix
+                        </option>
+
+                        <option value="Oppo">
+                            Oppo
+                        </option>
+
+                        <option value="Vivo">
+                            Vivo
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="category">
+
+                        Category
+                        <span>*</span>
+
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Smartphones">
+                            Smartphones
+                        </option>
+
+                        <option value="Tablets">
+                            Tablets
+                        </option>
+
+                        <option value="Accessories">
+                            Accessories
+                        </option>
+
+                        <option value="Featured">
+                            Featured Products
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MODEL -->
+
+                <div class="form-group">
+
+                    <label for="model">
+
+                        Model
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="model"
+                        name="model"
+                        placeholder="e.g. S25 Ultra"
+                    >
+
+                </div>
+
+
+
+                <!-- CONDITION -->
+
+                <div class="form-group">
+
+                    <label for="condition">
+
+                        Condition
+
+                    </label>
+
+                    <select
+                        id="condition"
+                        name="condition"
+                    >
+
+                        <option value="New">
+                            New
+                        </option>
+
+                        <option value="Used">
+                            Used
+                        </option>
+
+                        <option value="Refurbished">
+                            Refurbished
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group full">
+
+                    <label for="description">
+
+                        Product Description
+                        <span>*</span>
+
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe the phone, features, condition and other important information..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PRICING & INVENTORY
+        ================================== -->
+
+        <section class="form-section">
+
+
+            <div class="section-header">
+
+                <div class="section-icon">
+
+                    <i class="fa-solid fa-naira-sign"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Pricing & Inventory
+                    </h2>
+
+                    <p>
+                        Set the wholesale price and available quantity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <!-- PRICE -->
+
+                <div class="form-group">
+
+                    <label for="price">
+
+                        Wholesale Price
+                        <span>*</span>
+
+                    </label>
+
+
+                    <div class="input-prefix">
+
+                        <span>₦</span>
+
+                        <input
+                            type="number"
+                            id="price"
+                            name="price"
+                            placeholder="1450000"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COMPARE PRICE -->
+
+                <div class="form-group">
+
+                    <label for="compare-price">
+
+                        Compare-at Price
+
+                    </label>
+
+
+                    <div class="input-prefix">
+
+                        <span>₦</span>
+
+                        <input
+                            type="number"
+                            id="compare-price"
+                            name="comparePrice"
+                            placeholder="1600000"
+                            min="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STOCK -->
+
+                <div class="form-group">
+
+                    <label for="stock">
+
+                        Stock Quantity
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="stock"
+                        name="stock"
+                        placeholder="50"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- MOQ -->
+
+                <div class="form-group">
+
+                    <label for="moq">
+
+                        Minimum Order Quantity
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="moq"
+                        name="moq"
+                        placeholder="5"
+                        min="1"
+                        value="1"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PHONE SPECIFICATIONS
+        ================================== -->
+
+                <!-- =================================
+             PHONE SPECIFICATIONS
+        ================================== -->
+
+        <section class="form-section">
+
+            <div class="section-header">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+
+                <div>
+                    <h2>Phone Specifications</h2>
+
+                    <p>
+                        Technical details customers can see.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <!-- STORAGE -->
+
+                <div class="form-group">
+
+                    <label for="storage">
+                        Storage
+                    </label>
+
+                    <select
+                        id="storage"
+                        name="storage"
+                    >
+
+                        <option value="">
+                            Select Storage
+                        </option>
+
+                        <option value="64GB">
+                            64GB
+                        </option>
+
+                        <option value="128GB">
+                            128GB
+                        </option>
+
+                        <option value="256GB">
+                            256GB
+                        </option>
+
+                        <option value="512GB">
+                            512GB
+                        </option>
+
+                        <option value="1TB">
+                            1TB
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RAM -->
+
+                <div class="form-group">
+
+                    <label for="ram">
+                        RAM
+                    </label>
+
+                    <select
+                        id="ram"
+                        name="ram"
+                    >
+
+                        <option value="">
+                            Select RAM
+                        </option>
+
+                        <option value="4GB">
+                            4GB
+                        </option>
+
+                        <option value="6GB">
+                            6GB
+                        </option>
+
+                        <option value="8GB">
+                            8GB
+                        </option>
+
+                        <option value="12GB">
+                            12GB
+                        </option>
+
+                        <option value="16GB">
+                            16GB
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- NETWORK -->
+
+                <div class="form-group">
+
+                    <label for="network">
+                        Network
+                    </label>
+
+                    <select
+                        id="network"
+                        name="network"
+                    >
+
+                        <option value="4G">
+                            4G
+                        </option>
+
+                        <option value="5G">
+                            5G
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PROCESSOR -->
+
+                <div class="form-group">
+
+                    <label for="processor">
+                        Processor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="processor"
+                        name="processor"
+                        placeholder="e.g. Snapdragon 8 Elite"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             COLORS
+        ================================== -->
+
+        <section class="form-section">
+
+            <div class="section-header">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+
+                <div>
+
+                    <h2>Available Colors</h2>
+
+                    <p>
+                        Select the colors available for this product.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="color-options">
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="Black"
+                    >
+
+                    <span class="color-circle black"></span>
+
+                    <span>Black</span>
+
+                </label>
+
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="White"
+                    >
+
+                    <span class="color-circle white"></span>
+
+                    <span>White</span>
+
+                </label>
+
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="Silver"
+                    >
+
+                    <span class="color-circle silver"></span>
+
+                    <span>Silver</span>
+
+                </label>
+
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="Blue"
+                    >
+
+                    <span class="color-circle blue"></span>
+
+                    <span>Blue</span>
+
+                </label>
+
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="Green"
+                    >
+
+                    <span class="color-circle green"></span>
+
+                    <span>Green</span>
+
+                </label>
+
+
+                <label class="color-option">
+
+                    <input
+                        type="checkbox"
+                        name="colors"
+                        value="Gold"
+                    >
+
+                    <span class="color-circle gold"></span>
+
+                    <span>Gold</span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PRODUCT IMAGES
+        ================================== -->
+
+        <section class="form-section">
+
+            <div class="section-header">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-images"></i>
+                </div>
+
+                <div>
+
+                    <h2>Product Images</h2>
+
+                    <p>
+                        Add images customers will see.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="image-upload">
+
+                <label
+                    for="product-image"
+                    class="upload-box"
+                >
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <strong>
+                        Upload Product Image
+                    </strong>
+
+                    <span>
+                        PNG, JPG or WEBP
+                    </span>
+
+                    <input
+                        type="file"
+                        id="product-image"
+                        name="image"
+                        accept="image/png,image/jpeg,image/webp"
+                    >
+
+                </label>
+
+
+                <div
+                    class="image-preview"
+                    id="image-preview"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             PRODUCT STATUS
+        ================================== -->
+
+        <section class="form-section">
+
+            <div class="section-header">
+
+                <div class="section-icon">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </div>
+
+                <div>
+
+                    <h2>Product Status</h2>
+
+                    <p>
+                        Control how this product appears on the website.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-options">
+
+
+                <!-- ACTIVE -->
+
+                <label class="switch-row">
+
+                    <div>
+
+                        <strong>
+                            Active Product
+                        </strong>
+
+                        <span>
+                            Make this product visible to customers.
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        type="checkbox"
+                        id="active"
+                        name="active"
+                        checked
+                    >
+
+                    <span class="switch"></span>
+
+                </label>
+
+
+
+                <!-- FEATURED -->
+
+                <label class="switch-row">
+
+                    <div>
+
+                        <strong>
+                            Featured Product
+                        </strong>
+
+                        <span>
+                            Display this product in Featured Smartphones.
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        type="checkbox"
+                        id="featured"
+                        name="featured"
+                    >
+
+                    <span class="switch"></span>
+
+                </label>
+
+
+
+                <!-- FLASH DEAL -->
+
+                <label class="switch-row">
+
+                    <div>
+
+                        <strong>
+                            Flash Deal
+                        </strong>
+
+                        <span>
+                            Include this product in Today's Flash Deals.
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        type="checkbox"
+                        id="flash-deal"
+                        name="flashDeal"
+                    >
+
+                    <span class="switch"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FORM ACTIONS
+        ================================== -->
+
+        <div class="form-actions">
+
+            <a
+                href="products.html"
+                class="cancel-btn"
+            >
+
+                Cancel
+
+            </a>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submit-btn"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Product
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/add-product.js"></script>
+
+
+</body>
+
+</html>

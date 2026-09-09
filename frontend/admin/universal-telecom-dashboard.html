@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Universal Telecom Admin Dashboard</title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/universal-telecom-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MOBILE HEADER
+===================================================== -->
+
+<header class="mobile-header">
+
+
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtnHeader"
+    >
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <div class="mobile-logo">
+
+        <span class="logo-mark">
+            UT
+        </span>
+
+        <span>
+            Universal Telecom
+        </span>
+
+    </div>
+
+
+    <button
+        class="mobile-notification-btn"
+    >
+
+        <i class="fa-regular fa-bell"></i>
+
+        <span class="notification-dot"></span>
+
+    </button>
+
+    
+</header>
+
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+
+    <!-- LOGO -->
+
+
+    <div class="sidebar-logo">
+
+        <div class="logo-mark">
+            UT
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                Universal Telecom
+            </strong>
+
+            <span>
+                Admin Panel
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ADMIN PROFILE -->
+
+    <div class="admin-profile">
+
+        <div class="admin-avatar">
+            A
+        </div>
+
+        <div class="admin-profile-info">
+
+            <strong>
+                Admin
+            </strong>
+
+            <span>
+                Administrator
+            </span>
+
+        </div>
+
+        <button class="admin-profile-menu">
+
+            <i class="fa-solid fa-ellipsis"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MAIN NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+        <div class="nav-label">
+            MAIN MENU
+        </div>
+
+
+        <!-- Dashboard -->
+
+        <a
+            href="universal-telecom-dashboard.html"
+            class="nav-item active"
+        >
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <!-- Products -->
+
+        <a
+            href="products.html"
+            class="nav-item"
+        >
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Products
+            </span>
+
+        </a>
+
+
+        <!-- Add Product -->
+
+        <a
+            href="add-products.html"
+            class="nav-item"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>
+                Add Product
+            </span>
+
+        </a>
+
+
+        <!-- Customers -->
+
+        <a
+            href="customer.html"
+            class="nav-item"
+        >
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+            <span class="nav-badge" id="sidebar-customers-count" hidden>
+                0
+            </span>
+
+        </a>
+
+
+        <!-- Inquiries -->
+
+        <a href="inquiries.html" class="nav-item">
+            <i class="fa-solid fa-clipboard-question"></i>
+            <span>Inquiries</span>
+            <span class="nav-badge orange" id="sidebar-inquiries-count" hidden>0</span>
+        </a>
+
+
+        <!-- Messages -->
+
+        <a
+            href="admin-chat.html"
+            class="nav-item"
+        >
+
+            <i class="fa-regular fa-comments"></i>
+
+            <span>
+                Messages
+            </span>
+
+            <span class="nav-badge red" id="sidebar-messages-count" hidden>
+                0
+            </span>
+
+        </a>
+
+
+
+        <div class="nav-label second">
+            MANAGEMENT
+        </div>
+
+
+        <!-- Categories -->
+
+
+        <!-- Brands -->
+
+
+        <!-- Reviews -->
+
+
+        <!-- Quotes -->
+
+        <a
+            href="inquiries.html"
+            class="nav-item"
+        >
+
+            <i class="fa-solid fa-file-signature"></i>
+
+            <span>
+                Quote Requests
+            </span>
+
+            <span class="nav-badge purple" id="sidebar-quotes-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+
+
+        <div class="nav-label second">
+            SYSTEM
+        </div>
+
+
+        <!-- Website -->
+
+        <a
+            href="../phone-whole-shop.html"
+            class="nav-item"
+            target="_blank"
+        >
+
+            <i class="fa-solid fa-globe"></i>
+
+            <span>
+                View Website
+            </span>
+
+            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+
+        </a>
+
+
+        <!-- Settings -->
+
+    </nav>
+
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="#"
+            class="nav-item help-item"
+        >
+
+            <i class="fa-regular fa-circle-question"></i>
+
+            <span>
+                Help & Support
+            </span>
+
+        </a>
+
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+===================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         TOP BAR
+    ================================================= -->
+
+    <header class="dashboard-topbar">
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtnTopbar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <div class="page-heading">
+
+            <span class="breadcrumb">
+                Admin
+                <i class="fa-solid fa-chevron-right"></i>
+                Dashboard
+            </span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+
+            <!-- Search -->
+
+            <div class="dashboard-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="dashboardSearch"
+                    placeholder="Search..."
+                >
+
+                <kbd>
+                    /
+                </kbd>
+
+            </div>
+
+
+            <!-- Notification -->
+
+            <a
+                href="admin-chat.html"
+                class="topbar-icon-btn"
+                title="Unread messages"
+            >
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-count" id="topbar-unread-count" hidden>
+                    0
+                </span>
+
+            </a>
+
+
+            <!-- Admin -->
+
+            <div class="topbar-admin">
+
+                <div class="topbar-admin-avatar">
+                    A
+                </div>
+
+                <div class="topbar-admin-info">
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         DASHBOARD CONTENT
+    ================================================= -->
+
+    <section class="dashboard-content">
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================= -->
+
+        <div class="welcome-section">
+
+            <div>
+
+                <h2 id="welcome-heading">
+                    Welcome back 👋
+                </h2>
+
+                <p>
+                    Here's what's happening with your
+                    Universal Telecom store today.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-date">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <span id="currentDate">
+                    Today
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================= -->
+
+        <div class="stats-grid">
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <div class="stat-icon inquiries"><i class="fa-solid fa-clipboard-question"></i></div>
+            <span class="stat-period">Total</span>
+        </div>
+        <div class="stat-value" id="stat-inquiries">—</div>
+        <div class="stat-bottom">
+            <span>quote requests</span>
+        </div>
+    </article>
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <div class="stat-icon chats"><i class="fa-regular fa-comments"></i></div>
+            <span class="stat-period">Now</span>
+        </div>
+        <div class="stat-value" id="stat-conversations">—</div>
+        <div class="stat-bottom">
+            <span>conversations</span>
+        </div>
+    </article>
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <div class="stat-icon customers"><i class="fa-solid fa-users"></i></div>
+            <span class="stat-period">Total</span>
+        </div>
+        <div class="stat-value" id="stat-customers">—</div>
+        <div class="stat-bottom">
+            <span>registered customers</span>
+        </div>
+    </article>
+
+    <article class="stat-card">
+        <div class="stat-card-top">
+            <div class="stat-icon products"><i class="fa-solid fa-box"></i></div>
+            <span class="stat-period">Inventory</span>
+        </div>
+        <div class="stat-value" id="stat-products">—</div>
+        <div class="stat-bottom">
+            <span id="stat-low-stock-note">products listed</span>
+        </div>
+    </article>
+
+</div>
+
+
+
+        <!-- =================================================
+             SALES OVERVIEW + QUICK ACTIONS
+        ================================================= -->
+
+        <div class="dashboard-grid-main">
+
+
+            <!-- RECENT INQUIRIES SUMMARY (replaces a fake "Customer Interest"
+     chart that had no real analytics/tracking system behind it) -->
+
+<section class="dashboard-panel sales-overview" id="recent-inquiries-panel">
+    <div class="panel-header">
+        <div>
+            <h3>Recent Quote Requests</h3>
+            <p>Real submissions from customers, most recent first</p>
+        </div>
+        <a href="inquiries.html" class="view-all-btn">
+            View all <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div id="dashboard-inquiries-list" class="dashboard-mini-list">
+        <div class="dashboard-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+</section>
+
+<!-- QUICK ACTIONS -->
+
+            <!-- =================================================
+     QUICK ACTIONS
+================================================= -->
+
+<section class="dashboard-panel quick-actions-panel">
+
+    <div class="panel-header">
+
+        <div>
+
+            <h3>
+                Quick Actions
+            </h3>
+
+            <p>
+                Manage your store
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-actions">
+
+
+        <!-- ADD PRODUCT -->
+
+        <a
+            href="add-products.html"
+            class="quick-action"
+        >
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+            <div class="quick-action-text">
+
+                <strong>
+                    Add Product
+                </strong>
+
+                <span>
+                    Add a new phone
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </a>
+
+
+        <!-- VIEW ORDERS -->
+
+        <a
+            href="inquiries.html"
+            class="quick-action"
+        >
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+            </div>
+
+            <div class="quick-action-text">
+
+                <strong>
+                    View Inquiries
+                </strong>
+
+                <span>
+                    <span id="qa-inquiries-count">Loading...</span>
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a
+            href="admin-chat.html"
+            class="quick-action"
+        >
+
+            <div class="quick-action-icon">
+
+                <i class="fa-regular fa-comments"></i>
+
+            </div>
+
+            <div class="quick-action-text">
+
+                <strong>
+                    Messages
+                </strong>
+
+                <span id="qa-messages-count">
+                    Loading...
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </a>
+
+
+        <!-- MANAGE PRODUCTS -->
+
+        <a
+            href="products.html"
+            class="quick-action"
+        >
+
+            <div class="quick-action-icon">
+
+                <i class="fa-solid fa-box"></i>
+
+            </div>
+
+            <div class="quick-action-text">
+
+                <strong>
+                    Manage Products
+                </strong>
+
+                <span>
+                    <span id="qa-products-count">Loading...</span>
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     RECENT INQUIRIES
+================================================= -->
+
+<!-- =================================================
+     LOWER DASHBOARD GRID
+================================================= -->
+
+<div class="dashboard-grid-secondary">
+
+
+    <!-- =================================================
+     LOW STOCK
+================================================= -->
+
+<section class="dashboard-panel low-stock-panel">
+
+    <div class="panel-header">
+        <div>
+            <h3>Low Stock Alert</h3>
+            <p>Products that need attention</p>
+        </div>
+        <a href="products.html" class="view-all-btn">
+            Inventory <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="low-stock-list" id="low-stock-list">
+        <div class="dashboard-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     LOWER DASHBOARD GRID CLOSE
+================================================= -->
+
+</div>
+
+
+
+<!-- =================================================
+     RECENT ACTIVITY
+================================================= -->
+
+<section class="dashboard-panel activity-panel">
+
+    <div class="panel-header">
+        <div>
+            <h3>Recent Activity</h3>
+            <p>Latest real activity on your store</p>
+        </div>
+    </div>
+
+    <div class="activity-list" id="activity-list">
+        <div class="dashboard-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     DASHBOARD FOOTER
+================================================= -->
+
+<footer class="dashboard-footer">
+
+    <p>
+        © 2026 Universal Telecom. All rights reserved.
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Terms
+        </a>
+
+        <a href="#">
+            Support
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =================================================
+     CLOSE DASHBOARD CONTENT
+================================================= -->
+
+</section>
+
+
+
+<!-- =================================================
+     CLOSE MAIN CONTENT
+================================================= -->
+
+</main>
+
+
+
+<!-- =================================================
+     DASHBOARD JAVASCRIPT
+================================================= -->
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/universal-telecom-dashboard.js"></script>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+</body>
+
+</html>

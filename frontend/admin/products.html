@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UNIVERSAL TELECOM Admin - Products</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../css/products.css">
+
+</head>
+
+
+<body>
+    
+    <!-- MOBILE HEADER -->
+<header class="mobile-header">
+
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="mobile-brand">
+        <div class="mobile-logo">
+            <img src="../image/logo.png" alt="Celluar Logo">
+        </div>
+
+        <div>
+            <strong>UNIVERSAL TELECOM</strong>
+            <span>Admin Panel</span>
+        </div>
+    </div>
+
+    <button class="mobile-notification">
+        <i class="fa-regular fa-bell"></i>
+    </button>
+
+</header>
+
+<!-- MOBILE OVERLAY -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            <img src="../image/logo.png" alt="Celluar Logo">
+        </div>
+
+        <div>
+            <h2>UNIVERSAL TELECOM</h2>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="universal-telecom-dashboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="products.html" class="active">
+
+            <i class="fa-solid fa-box"></i>
+
+            Products
+
+        </a>
+
+
+        <a href="add-products.html">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+
+        </a>
+
+
+        <a href="customer.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            Customers
+
+        </a>
+
+
+        <a href="admin-chat.html">
+
+            <i class="fa-solid fa-comments"></i>
+
+            Messages
+
+            <span class="message-count">3</span>
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Orders
+
+        </a>
+
+
+        <a href="#">
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </a>
+
+    </nav>
+
+
+    <button class="logout-btn">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </button>
+
+</aside>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>Products</h1>
+
+            <p>
+                Manage your Universal Telecom products
+            </p>
+
+        </div>
+
+
+        <a
+            href="add-products.html"
+            class="add-product-btn"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-box"></i>
+
+            </div>
+
+            <div>
+
+                <span>Total Products</span>
+
+                <strong id="total-products">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>In Stock</span>
+
+                <strong id="in-stock">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <div>
+
+                <span>Low Stock</span>
+
+                <strong id="low-stock">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-tags"></i>
+
+            </div>
+
+            <div>
+
+                <span>Brands</span>
+
+                <strong id="total-brands">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= TOOLBAR ================= -->
+
+    <section class="toolbar">
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search products..."
+            >
+
+        </div>
+
+
+        <select id="brand-filter">
+
+            <option value="all">
+                All Brands
+            </option>
+
+        </select>
+
+
+        <select id="stock-filter">
+
+            <option value="all">
+                All Stock
+            </option>
+
+            <option value="in-stock">
+                In Stock
+            </option>
+
+            <option value="low-stock">
+                Low Stock
+            </option>
+
+            <option value="out-stock">
+                Out of Stock
+            </option>
+
+        </select>
+
+
+    </section>
+
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Product Inventory</h2>
+
+                <p id="product-result">
+                    Loading products...
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-btn"
+                id="refresh-btn"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Loading -->
+
+        <div
+            class="loading"
+            id="loading"
+        >
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p>Loading products...</p>
+
+        </div>
+
+
+
+        <!-- Error -->
+
+        <div
+            class="error-box"
+            id="error-box"
+            hidden
+        >
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <h3>
+                Unable to load products
+            </h3>
+
+            <p id="error-message">
+                Please check your server.
+            </p>
+
+            <button id="retry-btn">
+                Try Again
+            </button>
+
+        </div>
+
+
+
+        <!-- Empty -->
+
+        <div
+            class="empty-box"
+            id="empty-box"
+            hidden
+        >
+
+            <i class="fa-solid fa-box-open"></i>
+
+            <h3>
+                No products found
+            </h3>
+
+            <p>
+                Add your first product to Universal Telecom.
+            </p>
+
+            <a href="add-products.html">
+                Add Product
+            </a>
+
+        </div>
+
+
+
+        <!-- Product Grid -->
+
+        <div
+            class="product-grid"
+            id="product-grid"
+        ></div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/products.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Universal Telecom Admin - Inquiry Details
+    </title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Inquiry Details CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/inquiry-details.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     MOBILE HEADER
+========================================= -->
+
+<header class="mobile-header">
+
+    <button
+        class="menu-btn"
+        id="menu-btn"
+        aria-label="Open menu"
+    >
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <div class="mobile-brand">
+
+        <div class="mobile-logo">
+
+            <img
+                src="../image/logo.png"
+                alt="Universal Telecom Logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                UNIVERSAL TELECOM
+            </strong>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="notification-btn"
+        aria-label="Notifications"
+    >
+        <i class="fa-regular fa-bell"></i>
+    </button>
+
+</header>
+
+
+
+<!-- =========================================
+     SIDEBAR OVERLAY
+========================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebar-overlay"
+></div>
+
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+
+            <img
+                src="../image/logo.png"
+                alt="Universal Telecom Logo"
+            >
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                UNIVERSAL TELECOM
+            </strong>
+
+            <span>
+                ADMIN PANEL
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+
+        <a href="universal-telecom-dashboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a href="products.html">
+
+            <i class="fa-solid fa-box"></i>
+
+            <span>
+                Products
+            </span>
+
+        </a>
+
+
+        <a href="add-products.html">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>
+                Add Product
+            </span>
+
+        </a>
+
+
+        <a href="customer.html">
+
+            <i class="fa-solid fa-users"></i>
+
+            <span>
+                Customers
+            </span>
+
+            <span class="notification-count" id="sidebar-customers-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+
+        <!-- INQUIRIES -->
+
+        <a
+            href="inquiries.html"
+            class="active"
+        >
+
+            <i class="fa-solid fa-clipboard-question"></i>
+
+            <span>
+                Inquiries
+            </span>
+
+            <span class="notification-count" id="sidebar-inquiries-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a href="admin-chat.html">
+
+            <i class="fa-regular fa-comments"></i>
+
+            <span>
+                Messages
+            </span>
+
+            <span class="notification-count" id="sidebar-messages-badge" hidden>
+                0
+            </span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+
+    </nav>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        class="logout-btn"
+        id="logout-btn"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span>
+            Logout
+        </span>
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <div class="page-header">
+
+
+        <div>
+
+            <!-- BREADCRUMB -->
+
+            <div class="breadcrumb">
+
+                <a href="universal-telecom-dashboard.html">
+                    Dashboard
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <a href="inquiries.html">
+                    Inquiries
+                </a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span id="breadcrumb-inquiry-id">
+                    #UT-1048
+                </span>
+
+            </div>
+
+
+            <h1>
+                Inquiry Details
+            </h1>
+
+            <p>
+                View customer information and inquiry details.
+            </p>
+
+        </div>
+
+
+        <!-- HEADER ACTION -->
+
+        <div class="page-header-action">
+
+            <a
+                href="inquiries.html"
+                class="back-btn"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                <span>
+                    Back to Inquiries
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         INQUIRY CONTENT
+    ====================================== -->
+
+    <section class="inquiry-container">
+
+
+        <!-- =================================
+             INQUIRY SUMMARY
+        ================================== -->
+
+        <div class="inquiry-summary-card">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        INQUIRY
+                    </span>
+
+                    <h2 id="summary-quote-id">
+                        #UT-1048
+                    </h2>
+
+                </div>
+
+
+                <span class="status-badge new" id="summary-status-badge">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    New
+
+                </span>
+
+            </div>
+
+
+            <div class="inquiry-summary-grid">
+
+
+                <div class="summary-item">
+
+                    <span>
+                        Customer
+                    </span>
+
+                    <strong id="summary-customer-name">
+                        Samuel Peter
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span>
+                        Received
+                    </span>
+
+                    <strong id="summary-received-time">
+                        10 min ago
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span>
+                        Response Status
+                    </span>
+
+                    <strong class="response-pending" id="summary-response-status">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        Awaiting response
+
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             CUSTOMER INFORMATION
+        ================================== -->
+
+        <div class="content-grid">
+
+
+            <section class="content-card customer-information-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Information
+                        </h2>
+
+                        <p>
+                            Information provided during registration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-profile">
+
+                    <div class="customer-avatar" id="customer-avatar">
+                        SP
+                    </div>
+
+
+                    <div class="customer-profile-info">
+
+                        <h3 id="customer-name">
+                            Samuel Peter
+                        </h3>
+
+                        <span id="customer-account-status">
+                            Registered Customer
+                        </span>
+
+                    </div>
+
+
+                    <a href="#" id="open-conversation-btn" class="open-chat-btn" style="margin-left:auto;">
+                        <i class="fa-regular fa-comments"></i>
+                        <span>Message</span>
+                    </a>
+
+                    <button type="button" id="delete-customer-btn" class="open-chat-btn" style="color:#dc2626; margin-left:8px;" title="Delete this customer" hidden>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="customer-details-grid">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="customer-detail">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Email Address
+                            </span>
+
+                            <strong id="customer-email">
+                                samuel@email.com
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="customer-detail">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Phone Number
+                            </span>
+
+                            <strong id="customer-phone">
+                                +234 801 234 5678
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUSINESS NAME -->
+
+                    <div class="customer-detail customer-address">
+
+                        <div class="detail-icon">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Business Name
+                            </span>
+
+                            <strong id="customer-business">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RESPONSE STATUS
+            ================================== -->
+
+            <section class="content-card response-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Response Status
+                        </h2>
+
+                        <p>
+                            Current response state for this inquiry.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="response-status-box">
+
+                    <div class="response-status-icon">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Awaiting response
+                        </strong>
+
+                        <span>
+                            The customer is waiting for a response.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="admin-chat.html"
+                    class="open-chat-btn"
+                >
+
+                    <i class="fa-regular fa-comments"></i>
+
+                    Open Conversation
+
+                </a>
+
+            </section>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+        <!-- =================================
+             REQUESTED PRODUCTS
+        ================================== -->
+
+        <section class="content-card products-request-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Requested Products
+                    </h2>
+
+                    <p>
+                        Products included in this customer inquiry.
+                    </p>
+
+                </div>
+
+                <span class="items-count" id="items-count">
+                    1 Item
+                </span>
+
+            </div>
+
+
+            <!-- PRODUCT LIST -->
+
+            <div class="requested-products">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="requested-product">
+
+                    <div class="requested-product-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=300&q=80"
+                            alt="Requested product"
+                            id="requested-product-image"
+                        >
+
+                    </div>
+
+
+                    <div class="requested-product-info">
+
+                        <span class="product-brand" id="requested-product-brand">
+                            Samsung
+                        </span>
+
+                        <h3 id="requested-product-name">
+                            Samsung Galaxy S25 Ultra
+                        </h3>
+
+                        <span class="product-reference" id="requested-product-variant">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="requested-product-quantity">
+
+                        <span>
+                            Quantity
+                        </span>
+
+                        <strong id="requested-product-qty">
+                            10 units
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="products.html"
+                        class="view-product-btn"
+                    >
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        <span>
+                            View Product
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- MULTIPLE PRODUCTS CAN BE ADDED HERE -->
+
+            <!--
+            <div class="requested-product">
+
+                <div class="requested-product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=300&q=80"
+                        alt="Product name"
+                    >
+
+                </div>
+
+                <div class="requested-product-info">
+
+                    <span class="product-brand">
+                        Brand
+                    </span>
+
+                    <h3>
+                        Product Name
+                    </h3>
+
+                    <span class="product-reference">
+                        Product ID: UT-0000
+                    </span>
+
+                </div>
+
+                <div class="requested-product-quantity">
+
+                    <span>
+                        Quantity
+                    </span>
+
+                    <strong>
+                        5 units
+                    </strong>
+
+                </div>
+
+                <a
+                    href="products.html"
+                    class="view-product-btn"
+                >
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    <span>
+                        View Product
+                    </span>
+
+                </a>
+
+            </div>
+            -->
+
+
+        </section>
+
+
+
+        <!-- =================================
+             INQUIRY TIMELINE
+        ================================== -->
+
+        <section class="content-card inquiry-timeline-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Inquiry Activity
+                    </h2>
+
+                    <p>
+                        Recent activity related to this inquiry.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline" id="inquiry-timeline">
+
+                <!-- CREATED -->
+
+                <div class="timeline-item active">
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <strong>
+                            Inquiry received
+                        </strong>
+
+                        <p id="timeline-received-text">
+                            Loading...
+                        </p>
+
+                        <span id="timeline-received-time">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ACCOUNT STATUS -->
+
+                <div class="timeline-item" id="timeline-account-item">
+
+                    <div class="timeline-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <strong id="timeline-account-title">
+                            Checking account status...
+                        </strong>
+
+                        <p id="timeline-account-text">
+                            —
+                        </p>
+
+                        <span id="timeline-account-time">
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ADMIN ACTIONS
+        ================================== -->
+
+        <section class="content-card inquiry-actions-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>
+                        Inquiry Actions
+                    </h2>
+
+                    <p>
+                        Manage this customer inquiry.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="inquiry-actions">
+
+
+                <a
+                    href="admin-chat.html"
+                    class="action-btn primary"
+                    id="open-conversation-btn-main"
+                >
+
+                    <i class="fa-regular fa-comments"></i>
+
+                    Open Conversation
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="action-btn secondary"
+                    id="mark-replied-btn"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Mark as Replied
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-btn danger"
+                    id="resolve-inquiry-btn"
+                >
+
+                    <i class="fa-solid fa-check-double"></i>
+
+                    Resolve Inquiry
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 Universal Telecom. All rights reserved.
+            </p>
+
+            <div>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="../js/api.js"></script>
+<script src="admin-guard.js"></script>
+<script src="../js/inquiry-details.js"></script>
+
+</body>
+
+</html>
+

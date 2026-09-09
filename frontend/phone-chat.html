@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UNIVERSAL TELECOM Support</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Chat CSS -->
+    <link rel="stylesheet" href="css/phone-chat.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     CHAT PAGE
+========================================= -->
+
+<main class="chat-page">
+
+
+    <!-- =====================================
+         CHAT HEADER
+    ====================================== -->
+
+    <header class="chat-header">
+
+        <a href="" class="back-button">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </a>
+
+
+        <div class="support-profile">
+
+            <div class="support-avatar">
+
+                <img
+                    src="image/logo.png"
+                    alt="Universal Telecom"
+                >
+
+                <span class="online-dot"></span>
+
+            </div>
+
+
+            <div class="support-info">
+
+                <h1>Universal Telecom Support</h1>
+
+                <p>
+                    <span class="status-dot"></span>
+                    Online
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="chat-menu-button"
+            type="button"
+            aria-label="Chat options"
+        >
+
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CHAT MENU
+    ====================================== -->
+
+    <div class="chat-menu" id="chat-menu">
+
+        <button type="button">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            Support information
+
+        </button>
+
+
+        <button type="button" id="clear-chat">
+
+            <i class="fa-solid fa-trash"></i>
+
+            Clear conversation
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================
+         CHAT BODY
+    ====================================== -->
+
+    <section
+        class="chat-messages"
+        id="chat-messages"
+    >
+
+
+        <!-- DATE -->
+        <div class="chat-date">
+
+            <span>Today</span>
+
+        </div>
+
+
+        <!-- WELCOME MESSAGE -->
+
+        <div class="message support-message">
+
+            <div class="message-avatar">
+
+                <img
+                    src="image/logo.png"
+                    alt="TrueCell Support"
+                >
+
+            </div>
+
+
+            <div class="message-content">
+
+                <div class="message-bubble">
+
+                    <p>
+                        Hello! 👋 Welcome to TrueCell.
+                    </p>
+
+                    <p>
+                        How can we help you today?
+                    </p>
+
+                </div>
+
+
+                <span class="message-time">
+                    Just now
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             QUICK ACTIONS
+        ================================== -->
+
+        <div class="quick-actions">
+
+            <p class="quick-title">
+                Quick help
+            </p>
+
+
+            <div class="quick-buttons">
+
+                <button
+                    type="button"
+                    class="quick-btn"
+                    data-message="I want to track my order."
+                >
+
+                    <i class="fa-solid fa-box"></i>
+
+                    Track my order
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-btn"
+                    data-message="I have a question about a product."
+                >
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    Product enquiry
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-btn"
+                    data-message="I need help with payment."
+                >
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    Payment help
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-btn"
+                    data-message="I want to speak with a support agent."
+                >
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    Talk to an agent
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         TYPING INDICATOR
+    ====================================== -->
+
+    <div
+        class="typing-indicator"
+        id="typing-indicator"
+    >
+
+        <div class="typing-avatar">
+
+            <img
+                src="image/logo.png"
+                alt="TrueCell"
+            >
+
+        </div>
+
+
+        <div class="typing-bubble">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MESSAGE INPUT
+    ====================================== -->
+
+    <form
+        class="chat-input-area"
+        id="chat-form"
+    >
+
+
+        <!-- ATTACHMENT -->
+
+        <button
+            type="button"
+            class="attachment-button"
+            id="attachment-button"
+            aria-label="Attach file"
+        >
+
+            <i class="fa-solid fa-paperclip"></i>
+
+        </button>
+
+
+        <input
+            type="file"
+            id="file-input"
+            hidden
+        >
+
+
+        <!-- MESSAGE INPUT -->
+
+        <div class="message-input-wrapper">
+
+            <input
+                type="text"
+                id="message-input"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- SEND BUTTON -->
+
+        <button
+            type="submit"
+            class="send-button"
+            id="send-button"
+            aria-label="Send message"
+        >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+
+    </form>
+
+
+
+    <!-- =====================================
+         ATTACHMENT PREVIEW
+    ====================================== -->
+
+    <div
+        class="attachment-preview"
+        id="attachment-preview"
+    >
+
+        <div class="attachment-file">
+
+            <i class="fa-solid fa-file"></i>
+
+            <span id="attachment-name">
+                File
+            </span>
+
+            <button
+                type="button"
+                id="remove-attachment"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     CHAT JAVASCRIPT
+========================================= -->
+
+<script src="js/api.js"></script>
+<script src="js/phone-chat.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UNIVERSAL TELECOM| Product Details</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/phone-product-detail.css">
+    <link rel="stylesheet"
+          href="css/phone-logo.css">
+</head>
+
+<body>
+
+<!--=========================
+HEADER
+==========================-->
+
+<header class="header">
+
+    <nav class="navbar">
+
+        <a href="phone-whosaler.html" class="logo">
+            <img src="image/logo.png" alt="Universal Telecom Logo">
+        
+            <div>
+                <h1>TrueCell</h1>
+                <span>Phone Wholesale</span>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="phone-whole-shop.html">Home</a></li>
+            <li><a href="phone-whole-shop.html">Shop</a></li>
+            <li><a href="phone-about.html">About</a></li>
+            <li><a href="phone-contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            <li><a href="phone-quote.html"><i class="fa-solid fa-file-signature"></i> Quote</a></li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="phone-register.html" class="login-btn">
+                SignUp
+            </a>
+        
+        </div>
+
+    </nav>
+
+</header>
+
+<!--=========================
+SEARCH BAR
+==========================-->
+
+<!--=========================
+BREADCRUMB
+==========================-->
+
+<section class="breadcrumb">
+
+    <a href="phone-whosaler.html">Home</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <a href="phone-whole-shop.html">Shop</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <span id="breadcrumb-product-name">iPhone 16 Pro Max</span>
+
+</section>
+
+<!--=========================
+PRODUCT DETAILS
+==========================-->
+
+<section class="product-details">
+
+    <!-- Product Images -->
+
+    <div class="product-gallery">
+
+        <div class="main-image">
+
+            <img src="image/logo.png"
+                 alt="Loading product..."
+                 id="mainImage">
+
+        </div>
+
+        <div class="thumbnail-gallery" id="thumbnail-gallery">
+
+            <!-- Thumbnails rendered dynamically from the real product's images -->
+
+        </div>
+
+    </div>
+
+    <!-- Product Information -->
+
+    <div class="product-info">
+
+        <span class="product-brand" id="product-brand">
+
+            Apple
+
+        </span>
+
+        <h1 id="product-name">
+
+            Apple iPhone 16 Pro Max
+
+        </h1>
+
+        <div class="stock in-stock" id="product-stock">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            In Stock
+
+        </div>
+
+        <div class="short-description" id="product-description">
+
+            Premium flagship smartphone with an advanced camera system,
+            powerful performance, all-day battery life and multiple storage
+            options for retailers and wholesale buyers.
+
+        </div>
+        
+        
+        <!--=========================
+WHOLESALE PRICE
+==========================-->
+
+<div class="price-box">
+
+    <h2>Wholesale Price</h2>
+
+    <div class="price" id="product-price">
+
+        From <span>₦0</span> / Unit
+
+    </div>
+
+    <small>
+        *Final price depends on quantity ordered — confirmed on your quote.
+    </small>
+
+</div>
+
+<!--=========================
+MOQ
+==========================-->
+
+<div class="product-meta">
+
+    <p>
+
+        <strong>Minimum Order Quantity:</strong>
+
+        <span id="product-moq">5 Units</span>
+
+    </p>
+
+</div>
+
+<!--=========================
+COLOURS
+==========================-->
+
+<div class="options" id="colours-section">
+
+    <h3>Available Colours</h3>
+
+    <div class="color-options" id="color-options">
+        <!-- Rendered dynamically if this product has colours -->
+    </div>
+
+</div>
+
+<!--=========================
+STORAGE
+==========================-->
+
+<div class="options" id="storage-section">
+
+    <h3>Storage</h3>
+
+    <div class="storage-options" id="storage-options">
+        <!-- Rendered dynamically if this product has a storage value -->
+    </div>
+
+</div>
+
+<!--=========================
+QUANTITY
+==========================-->
+
+<div class="quantity-box">
+
+    <h3>Quantity</h3>
+
+    <div class="quantity-selector">
+
+        <button type="button" id="qty-minus">-</button>
+
+        <input
+            type="number"
+            value="5"
+            min="1"
+            id="qty-input">
+
+        <button type="button" id="qty-plus">+</button>
+
+    </div>
+
+</div>
+
+<!--=========================
+ACTION BUTTONS
+==========================-->
+
+<div class="action-buttons">
+
+    <a href="#" class="quote-btn" id="detail-quote-btn">
+
+        <i class="fa-solid fa-file-signature"></i>
+
+        Request Quote
+
+    </a>
+
+    <button type="button" class="whatsapp-btn" id="detail-add-cart-btn">
+
+        <i class="fa-solid fa-cart-plus"></i>
+
+        Add to Cart
+
+    </button>
+
+</div>
+
+<div class="action-buttons secondary">
+
+    <a href="tel:+2348000000000"
+       class="call-btn">
+
+        <i class="fa-solid fa-phone"></i>
+
+        Call Sales
+
+    </a>
+
+    <a href="https://wa.me/2348000000000"
+       class="whatsapp-btn">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        WhatsApp Sales
+
+    </a>
+
+</div>
+
+<!--=========================
+TRUST FEATURES
+==========================-->
+
+<div class="trust-box">
+
+    <div>
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>100% Genuine Products</span>
+
+    </div>
+
+    <div>
+
+        <i class="fa-solid fa-boxes-stacked"></i>
+
+        <span>Bulk Discounts Available</span>
+
+    </div>
+
+    <div>
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+        <span>Nationwide Delivery</span>
+
+    </div>
+
+    <div>
+
+        <i class="fa-solid fa-headset"></i>
+
+        <span>Dedicated Business Support</span>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--=================================
+PRODUCT INFORMATION
+==================================-->
+
+<section class="product-information">
+
+    <!-- Specifications -->
+
+    <div class="info-card">
+
+        <h2>Technical Specifications</h2>
+
+        <table class="spec-table" id="spec-table">
+            <!-- Rendered dynamically from the real product's data —
+                 only fields that were actually filled in by admin appear here -->
+        </table>
+
+    </div>
+
+    <!-- What's in the Box -->
+
+    <div class="info-card">
+
+        <h2>What's in the Box</h2>
+
+        <ul>
+
+            <li>✔ <span id="box-product-name">Product</span></li>
+
+            <li>✔ Charging Cable</li>
+
+            <li>✔ Documentation</li>
+
+        </ul>
+
+    </div>
+
+    <!-- Shipping -->
+
+    <div class="info-card">
+
+        <h2>Shipping & Delivery</h2>
+
+        <p>
+
+            Orders are processed after your quote is confirmed. Nationwide
+            delivery is available through trusted logistics partners —
+            exact timelines are confirmed with your quote based on your location.
+
+        </p>
+
+    </div>
+
+    <!-- Warranty -->
+
+    <div class="info-card">
+
+        <h2>Warranty</h2>
+
+        <p>
+
+            Genuine products backed by the manufacturer's warranty
+            where applicable. Please review our warranty policy for
+            complete coverage details.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!--=================================
+RELATED PRODUCTS
+==================================-->
+
+<section class="related-products" id="related-products-section" hidden>
+
+    <div class="section-title">
+
+        <h2>You May Also Like</h2>
+
+        <p>Other products from our wholesale catalogue.</p>
+
+    </div>
+
+    <div class="related-grid" id="related-grid">
+        <!-- Rendered dynamically from real products -->
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>True</h2>
+
+            <p>
+                Your trusted destination for premium smartphones, accessories and unbeatable deals.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Brands</a>
+            <a href="#">Deals</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Support</h3>
+
+            <a href="#">FAQs</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy Policy</a>
+
+        </div>
+        
+        <div class="footer-box">
+
+
+            <h3>
+            Contact
+            </h3>
+            
+            
+            <p>
+            📞 +234 801 234 5678
+            </p>
+            
+            
+            <p>
+            📧 support@phonehub.com
+            </p>
+            
+            
+            <p>
+            📍 Nigeria
+            </p>
+            
+            
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 Universal Telecom. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!--========================
+FLOATING WHATSAPP
+========================-->
+
+<a href="https://api.whatsapp.com/send?phone=2349021256138" target="_blank" class="floating-whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+    <a href="phone-whosaler.html" class="active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="phone-whole-shop.html">
+        <i class="fa-solid fa-store"></i>
+        <span>Shop</span>
+    </a>
+
+    <a href="cart.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+
+        <small class="cart-count">2</small>
+    </a>
+
+    <a href="phone-quote.html">
+        <i class="fa-solid fa-file-signature"></i>
+        <span>Quote</span>
+    </a>
+
+
+    <div class="dropdown">
+
+        <button id="menuBtn">
+    
+            <i class="fa-solid fa-bars"></i>
+            Menu
+    
+        </button>
+    
+        <div class="options" id="menuOptions">
+            
+            <a href="phone-quote.html">Request Quote</a>
+            
+            <a href="phone-about.html">About</a>
+            
+            <a href="phone-contact.html">Contact</a>
+    
+            <a href="phone-profile.html">My Profile</a>
+    
+            <a href="phone-login.html">Sign In</a>
+            
+            <a href="phone-register.html">Sign Up</a>
+    
+        </div>
+    
+    </div>
+</nav>
+
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/phone-product-detail.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Celluar</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="css/phone-logo.css">
+    <link rel="stylesheet"
+        href="css/cart.css">
+    
+    
+
+</head>
+
+<body>
+
+<!--====================
+HEADER
+=====================-->
+
+<!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <nav class="navbar">
+
+        <a href="phone-whosaler.html" class="logo">
+            <img src="image/logo.png" alt="Universal Telecom Logo">
+        
+            <div>
+                <h1>Universal Telecom</h1>
+                <span>Phone Wholesale</span>
+            </div>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="phone-whole-shop.html">Home</a></li>
+            <li><a href="phone-whole-shop.html">Shop</a></li>
+            <li><a href="phone-about.html">About</a></li>
+            <li><a href="phone-contact.html">Contact</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            <li><a href="phone-quote.html"><i class="fa-solid fa-file-signature"></i> Quote</a></li>
+        </ul>
+
+        <div class="nav-right">
+
+            <a href="phone-register.html" class="login-btn">
+                SignUp
+            </a>
+        
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+<!--====================
+PAGE TITLE
+=====================-->
+
+<section class="page-title">
+
+    <h1>Shopping Cart</h1>
+
+    <p>
+
+        Review your wholesale order before checkout.
+
+    </p>
+
+</section>
+
+<!--====================
+CART ITEMS
+=====================-->
+
+<section class="cart-container" id="cart-container">
+
+    <!-- Rendered dynamically by js/cart.js from the real cart in localStorage -->
+
+    <div class="cart-empty-state" id="cart-empty-state">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Your cart is empty</h3>
+        <p>Browse the shop and add products you'd like a wholesale quote for.</p>
+        <a href="phone-whole-shop.html" class="continue-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Browse Products
+        </a>
+    </div>
+
+    <div id="cart-items"></div>
+
+</section>
+
+
+<!--====================
+ORDER SUMMARY
+=====================-->
+
+<section class="summary-section" id="summary-section" hidden>
+
+    <div class="summary-card">
+
+        <h2>
+            Order Summary
+        </h2>
+
+        <div class="summary-row">
+            <span>Items in cart</span>
+            <span id="summary-item-count">0</span>
+        </div>
+
+        <div class="summary-row total">
+            <span>Total Units</span>
+            <span id="summary-total-units">0</span>
+        </div>
+
+        <p style="font-size:13px; color:#888; margin:12px 0;">
+            Pricing is confirmed with our team directly — click below to message admin with everything in your cart.
+        </p>
+
+        <a href="#" id="request-quote-from-cart"
+            class="quote-btn">
+
+            <i class="fa-regular fa-comments"></i>
+
+            Message Admin About This
+
+        </a>
+
+        <a href="phone-whole-shop.html"
+            class="continue-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Continue Shopping
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!--====================
+FEATURES
+=====================-->
+
+<section class="features">
+
+    <div class="feature">
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+        <h3>Fast Delivery</h3>
+
+        <p>Worldwide wholesale shipping.</p>
+
+    </div>
+
+    <div class="feature">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h3>Quote-Based Pricing</h3>
+
+        <p>Transparent wholesale pricing, confirmed on request.</p>
+
+    </div>
+
+    <div class="feature">
+
+        <i class="fa-solid fa-medal"></i>
+
+        <h3>Premium Quality</h3>
+
+        <p>100% genuine Apple products.</p>
+
+    </div>
+
+    <div class="feature">
+
+        <i class="fa-solid fa-headset"></i>
+
+        <h3>24/7 Support</h3>
+
+        <p>Dedicated customer assistance.</p>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!--====================
+FOOTER
+=====================-->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Celluar. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+<!--====================
+BOTTOM NAVIGATION
+=====================-->
+
+<!--========================
+FLOATING WHATSAPP
+========================-->
+
+<a href="https://api.whatsapp.com/send?phone=2349021256138" target="_blank" class="floating-whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+    <a href="phone-whosaler.html" class="active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="phone-whole-shop.html">
+        <i class="fa-solid fa-store"></i>
+        <span>Shop</span>
+    </a>
+
+    <a href="cart.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+
+        <small class="cart-count">2</small>
+    </a>
+
+    <a href="phone-quote.html">
+        <i class="fa-solid fa-file-signature"></i>
+        <span>Quote</span>
+    </a>
+
+
+    <div class="dropdown">
+
+        <button id="menuBtn">
+    
+            <i class="fa-solid fa-bars"></i>
+            Menu
+    
+        </button>
+    
+        <div class="options" id="menuOptions">
+            
+            <a href="phone-quote.html">Request Quote</a>
+            
+            <a href="phone-about.html">About</a>
+            
+            <a href="phone-contact.html">Contact</a>
+    
+            <a href="phone-profile.html">My Profile</a>
+    
+            <a href="phone-login.html">Sign In</a>
+            
+            <a href="phone-register.html">Sign Up</a>
+    
+        </div>
+    
+    </div>
+</nav>
+
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>
